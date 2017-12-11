@@ -1,0 +1,12 @@
+/coverage
+/.secrets
+/.nyc_output
+/node_modules
+/test
+/bin
+/db
+*.log
+.DS_Store
+.env
+*.bbprojectd
+*.yml
