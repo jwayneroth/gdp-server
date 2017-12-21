@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
@@ -61,6 +62,10 @@ app.use('/importer', importerResource);
 app.use('/api', apiResource);
 app.use('/users', usersResource);
 app.use('/tokens', tokensResource);
+app.use('/static', express.static(path.join(__dirname, '../app/dist/static')));
+app.get('*', (req, res) => {
+	res.sendFile(path.join(__dirname, '../app/dist/index.html'));
+});
 app.use(errorHandler);
 
 app.listen(port, () => {
