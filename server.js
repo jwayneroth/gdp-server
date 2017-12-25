@@ -24,7 +24,7 @@ const app = express();
 models.sync({
 	force: false
 })
-.then( function() {
+/*.then( function() {
 	return db.pool.query("SELECT @@sql_mode;")
 	.spread(function(results, metadata) {
 		let mode = results[0]['@@sql_mode'].split(',');
@@ -38,7 +38,7 @@ models.sync({
 		}
 		return;
 	});
-})
+})*/
 .catch(function(err) {
 	throw err;
 });
